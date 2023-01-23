@@ -9,9 +9,16 @@ import torchvision.models as models
 import torchvision.transforms as transforms
 
 import argparse
+import logging
+import sys
 
 
 #TODO: Import dependencies for Debugging andd Profiling
+
+
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
+logger.addHandler(logging.StreamHandler(sys.stdout))
 
 def test(model, test_loader):
     '''
@@ -38,10 +45,11 @@ def net():
 
 def create_data_loaders(data, batch_size):
     '''
-    This is an optional function that you may or may not need to implement
-    depending on whether you need to use data loaders or not
+    This function takes in the data and batch size and returns a data loader
     '''
-    pass
+    logger.info("Get loader")
+    
+
 
 def main(args):
     '''
